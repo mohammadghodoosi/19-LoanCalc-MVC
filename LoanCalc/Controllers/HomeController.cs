@@ -22,6 +22,10 @@ namespace LoanCalc.Controllers
         {
             return View();
         }
+        public IActionResult LoanCalc()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
