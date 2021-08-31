@@ -24,7 +24,14 @@ namespace LoanCalc.Controllers
         }
         public IActionResult LoanCalc()
         {
-            return View();
+            Loan loan = new();
+            loan.Payment = 0.0m;
+            loan.TotalInterst = 0.0m;
+            loan.TotalCost = 0.0m;
+            loan.Term = 60;
+            loan.Rate = 3.5m;
+            loan.Amount = 150000m;
+            return View(loan);
         }
 
         public IActionResult Privacy()
