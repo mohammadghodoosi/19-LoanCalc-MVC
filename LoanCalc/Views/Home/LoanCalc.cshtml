@@ -1,5 +1,27 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model LoanCalc.Models.Loan
+
+
+<div class="container">
+    <form class=" border p-4 border-2 border-dark" asp-action="LoanCalc" asp-controller="Home">
+        <div class="row">
+            <div class="col-12 text-center border-bottom border-2">Loan Calculator</div>
+            <div class="mt-2 col-9">
+                <label class="label-form">Amount</label>
+                <input class="form-control" asp-for="Amount" value="@Model.Amount">
+            </div>
+            <div class="mt-2 col-9">
+                <label class="label-form">Term</label>
+                <input class="form-control" asp-for="Term" value="@Model.Term">
+            </div>
+            <div class="mt-2 col-9">
+                <label class="label-form">Rate</label>
+                <input class="form-control" asp-for="Rate" value="@Model.Rate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9"></div>
+            <button class="col-3 btn btn-dark" type="submit">Calculate</button>
+
+        </div>
+    </form>
+</div>
