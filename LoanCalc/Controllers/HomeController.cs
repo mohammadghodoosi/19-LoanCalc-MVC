@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using LoanCalc.Helper;
 
 namespace LoanCalc.Controllers
 {
@@ -22,7 +23,7 @@ namespace LoanCalc.Controllers
         {
             return View();
         }
-        public IActionResult LoanCalc()
+        public IActionResult LoanCal()
         {
             Loan loan = new();
             loan.Payment = 0.0m;
@@ -32,6 +33,13 @@ namespace LoanCalc.Controllers
             loan.Rate = 3.5m;
             loan.Amount = 150000m;
             return View(loan);
+        }
+
+        public IActionResult LoanCal(Loan loan)
+        {
+            var loanHelper = new LoanHelper();
+            Loan newLoan = loanHelper.GetPayments(loan);
+            return View(newLoan);
         }
 
         public IActionResult Privacy()
